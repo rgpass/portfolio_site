@@ -21,7 +21,7 @@ body {
 
 /* Colors */
 .theme-main {
-  color: #2196f3;
+  color: #00b79c;
 }
 
 /* Text */
@@ -83,7 +83,7 @@ li i {
 
 /* Icons */
 .icon {
-  background: #2196f3; /* Was #75ce66 */
+  background: #00b79c; /* Was #75ce66 */
 }
 img.job {
   width: 35px;
