@@ -4,7 +4,7 @@ html {
 }
 
 section {
-  overflow: auto;
+  overflow: hidden;
 }
 
 textarea {
@@ -20,7 +20,7 @@ body {
 }
 
 /* Colors */
-.blue {
+.theme-main {
   color: #2196f3;
 }
 
@@ -44,13 +44,40 @@ body {
   margin-bottom: 0px;
 }
 
+li i {
+  margin-top: 5px;
+}
+
+/** START: Editing CD stuff **/
+/* Fonts */
+@media only screen and (max-width: 768px) {
+  .cd-timeline-content h2 {
+    font-size: 20px;
+    font-size: 2rem; /* Was 1.25rem */
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  .cd-timeline-content p {
+    font-size: 16px;
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 1170px) {
+  h1, h3 {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1170px) {
+  h1, h3 {
+    text-align: center;
+  }
+}
+
 /* Bullets */
 #cd-timeline {
   font-size: 0.8em;
-}
-
-li i {
-  margin-top: 5px;
 }
 
 /* Icons */
@@ -78,3 +105,4 @@ img.tutorial {
   left: 43%;
   top: 45%;
 }
+/** END: Editing CD stuff **/
