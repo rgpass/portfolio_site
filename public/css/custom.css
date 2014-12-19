@@ -1,12 +1,4 @@
-.strong {
-  font-weight: bold;
-}
-
-#super-strong {
-  font-weight: bold;
-  font-style: 50px;
-}
-
+/* Generic */
 html {
   overflow-y: scroll;
 }
@@ -23,11 +15,26 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
 }
 
-.blue {
-  color: #0c84e4;
+body {
+  margin-top: 60px;
 }
 
-/* navbar */
+/* Colors */
+.blue {
+  color: #2196f3;
+}
+
+/* Text */
+.strong {
+  font-weight: bold;
+}
+
+#slogan {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Navbar */
 /* Change navbar height */
 .navbar-nav > li > a {padding-top:10px !important; padding-bottom:10px !important;}
 .navbar {min-height:40px !important}
@@ -35,4 +42,9 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
   border-radius: 0px;
   margin-bottom: 0px;
+}
+
+/* Bullets */
+#cd-timeline {
+  font-size: 0.8em;
 }
