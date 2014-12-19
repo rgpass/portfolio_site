@@ -1,12 +1,44 @@
-<!-- TODO: Add hackathons, icons for fb, GitHub, LinkedIn, email -->
+<!-- TODO: RWD -->
+<!-- TODO: Link to resume -->
+<!-- TODO: Change blue to something unique, add some green to it -->
+<!-- TODO: Explain the icons -->
+<!-- TODO: Change fonts, start with headers -->
 
 <h1 class="blue text-center">Gerry Pass</h1>
 <h3 id="slogan" class="blue text-center">Web Developer, Lover of Startups, Drone Pilot</h3>
 
 <section id="cd-timeline" class="cd-container">
+
   <div class="cd-timeline-block">
     <div class="cd-timeline-img cd-picture">
-      <img src="img/job.svg" alt="Picture">
+      <img src="img/project.svg" alt="Picture">
+    </div> <!-- cd-timeline-img -->
+
+    <div class="cd-timeline-content">
+      <h2>Creator</h2>
+      <h2><a href="https://gerrypass.herokuapp.com/">My Portfolio</a></h2>
+      <p>This portfolio page is my first app using Sinatra and I must say I love using Sinatra. Such a low amount of baggage which is perfect for a simple app.</p>
+      <span class="cd-date">Dec 14</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img cd-picture">
+      <img src="img/book.svg" alt="Picture">
+    </div> <!-- cd-timeline-img -->
+
+    <div class="cd-timeline-content">
+      <h2><a href="https://sublimetextbook.com/">Sublime Text Power User</a></h2>
+      <h2>by <a href="http://wesbos.com/">Wes Bos</a></h2>
+      <p>
+        Wes Bos covers a ton of awesome shortcuts and packages to drastically speed up development using Sublime Text 3. I strongly recommend this book to anyone who has a few months of experience and is ready to get stuff done much quicker.
+      </p>
+      <span class="cd-date">Dec 14</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img icon"> <!-- Was cd-picture -->
+      <img src="img/job.svg" class="job" alt="Picture">
     </div> <!-- cd-timeline-img -->
 
     <div class="cd-timeline-content">
@@ -39,6 +71,21 @@
       </p>
       <!-- <a href="#0" class="cd-read-more">Read more</a> -->
       <span class="cd-date">Sept 14 - Present</span>
+    </div> <!-- cd-timeline-content -->
+  </div> <!-- cd-timeline-block -->
+
+  <div class="cd-timeline-block">
+    <div class="cd-timeline-img icon">
+      <img src="img/hackathon.svg" class="hackathon" alt="Picture">
+    </div> <!-- cd-timeline-img -->
+
+    <div class="cd-timeline-content">
+      <h2>Lead Developer</h2>
+      <h2>VVV Academy</h2>
+      <p>
+        The Startup Weekend: Education hackathon focused on projects to increase education. Working with three other developers, we were able to turn an idea into a visual MVP in four hours and win 3rd place.
+      </p>
+      <span class="cd-date">Sept 14</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
 
@@ -77,20 +124,30 @@
     <div class="cd-timeline-content">
       <h2><a href="http://www.poodr.com/">Practical Object-Oriented Design in Ruby</a></h2>
       <h2>by <a href="http://www.sandimetz.com/">Sandi Metz</a></h2>
-      <p></p>
+      <p>
+        My favorite programming book, Sandi Metz clearly articulates the power of object-oriented thinking (nouns and verbs instead of events) and how it can be used to make code not only easier to read, but much more flexible.
+      </p>
+      <p>
+        Because the Agile process only assumes knowledge for the length of the sprint (typically two weeks or less), flexibility is the most important aspect. She covers the minute such as using a hash of arguments to the overview of smart ERDs and duck-typing.
+      </p>
       <span class="cd-date">June 14</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
 
   <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-picture">
-      <img src="img/job.svg" alt="Picture">
+    <div class="cd-timeline-img icon">
+      <img src="img/job.svg" class="job" alt="Picture">
     </div> <!-- cd-timeline-img -->
 
     <div class="cd-timeline-content">
       <h2>Software Engineering Contractor</h2>
       <h2><a href="http://rotorcommerce.herokuapp.com/">RotorCommerce</a></h2>
-      <p></p>
+      <p>
+        While testing the e-commerce market, we learned that the quantity of images is directly correlated to the amount of sales an item gets. After several pivots, we had the idea to crowdsource high-quality images from customers in return for a few dollars off their next purchase. The images gathered during our testing process were of high-quality, however our customers did not believe it would possible to implement due to legal issues and infrastructure.
+      </p>
+      <p>
+        Working on a 3-person team, my role at RotorCommerce was to challenge the CEO on all business assumptions, create mockups and visual MVPs, and build rapid prototypes. By breaking down the Lean Startup methodologies to actionable items, we were able to iterate quickly and often. The time from idea to testable MVP was minimized to less than a day.
+      </p>
       <span class="cd-date">Jun 14 - Aug 14</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
@@ -103,7 +160,8 @@
     <div class="cd-timeline-content">
       <h2>Founder</h2>
       <h2><a href="https://www.happs.io">Happs</a></h2>
-      <p></p>
+      <p>My flagship project, I wanted to combine the findings of positive psychology (the science of what makes people happy) with technology. Happs (Happy + Apps) enables you to make yourself happier in three ways: tracks your happiness over time, determines what activities will make you the happiest, and guides you through those activities.</p>
+      <p>Happs is <a href="https://github.com/rgpass/happs">open-source</a> and has full RSpec test coverage.</p>
       <span class="cd-date">May 14 - Present</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
@@ -116,36 +174,44 @@
     <div class="cd-timeline-content">
       <h2><a href="http://www.amazon.com/gp/product/0321584104/ref=as_li_ss_tl?ie=UTF8&tag=eloqruby-20&linkCode=as2&camp=217145&creative=399349&creativeASIN=0321584104">Eloquent Ruby</a></h2>
       <h2>by <a href="http://russolsen.com/">Russ Olsen</a></h2>
-      <p></p>
+      <p>Eloquent Ruby starts off where intro to Ruby books end. Its focus is to write code for the next person, living by the mantra "Always code as if the person who ends up maintaining your code is a violent psychopath who knows where you live." It covers a wide range of Ruby concepts well, however it assumes a decent amount of programming experience from the reader.</p>
       <span class="cd-date">Apr 14</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
 
   <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-picture">
-      <img src="img/job.svg" alt="Picture">
+    <div class="cd-timeline-img icon">
+      <img src="img/job.svg" class="job" alt="Picture">
     </div> <!-- cd-timeline-img -->
 
     <div class="cd-timeline-content">
       <h2>Software Engineering Contractor</h2>
       <h2><a href="http://rigor.com/">Rigor</a></h2>
-      <p></p>
+      <p>
+        My first job and it happened to be at the <a href="http://www.tagonline.org/news-press/tag-unveils-the-top-10-innovative-technology-companies-in-georgia-2014/">most innovative company in Georgia</a>. Working on a small team of four developers, my role was to improve their free offerings on <a href="http://labs.rigor.com/">Rigor Labs</a>.
+      </p>
+      <p>
+        Working under two senior developers drastically improved my coding ability and I'm grateful for their help and patience. I'll be using Rigor in the future.
+      </p>
       <span class="cd-date">Jan 14 - Apr 14</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
 
   <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-picture">
-      <img src="img/hackathon.svg" alt="Picture">
+    <div class="cd-timeline-img icon">
+      <img src="img/hackathon.svg" class="hackathon" alt="Picture">
     </div> <!-- cd-timeline-img -->
 
     <div class="cd-timeline-content">
       <h2>Co-Developer</h2>
       <h2><a href="http://www.jordanstreiff.com/atlanta-districts/">ATL Districts</a></h2>
-      <p></p>
+      <p>
+        Worked on a 2-person team during <a href="http://govathon.com/">my first hackathon</a> and we won the "Go Ahead and Implement It Already" award. Our app was a simple, yet powerful app where the user would input their address and it would output all the info relevant to their voting district.
+      </p>
       <span class="cd-date">Nov 13</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
+
   <div class="cd-timeline-block">
     <div class="cd-timeline-img cd-picture">
       <img src="img/project.svg" alt="Picture">
@@ -153,8 +219,13 @@
 
     <div class="cd-timeline-content">
       <h2>Creator</h2>
-      <h2><a href="http://rnott.herokuapp.com/">Random Night on the Town</a></h2>
-      <p></p>
+      <h2><a href="http://rnott.herokuapp.com/">Noctaneous</a></h2>
+      <p>
+        My first app that focused on mobile (web) first. Its purpose was to ask the user for inputs on what they would like to do this evening, then it would output a spontaneous evening event with no more than a basic description and an address.
+      </p>
+      <p>
+        Using Zurb instead of Bootstrap, it was possible to design it nicely for mobile use.
+      </p>
       <span class="cd-date">Sept 13</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
@@ -167,33 +238,39 @@
     <div class="cd-timeline-content">
       <h2>Creator</h2>
       <h2><a href="http://mydysfunctionalworkplace.com/">My Dysfunctional Workplace</a></h2>
-      <p></p>
+      <p>
+        My first solo project. MDW allows users to submit and read hilarious workplace failures and dysfunctions. It closely mimiced Michael Hartl's Rails Tutorial, but it was nice to leave the proverbial nest of tutorials and reaffirm my understanding of MVC and Rails fundamentals.
+      </p>
       <span class="cd-date">June 13</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
 
   <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-picture">
-      <img src="img/tutorial.svg" alt="Picture">
+    <div class="cd-timeline-img icon">
+      <img src="img/tutorial.svg" class="tutorial" alt="Picture">
     </div> <!-- cd-timeline-img -->
 
     <div class="cd-timeline-content">
       <h2><a href="http://www.michaelhartl.com/">Michael Hartl</a>'s <a href="https://www.railstutorial.org/">Rails Tutorial</a></h2>
       <h2><a href="https://gpsampleapp.herokuapp.com/">Twitter Clone</a></h2>
-      <p></p>
+      <p>
+        Sometimes called The Bible of Rails Tutorials, Hartl does an excellent job of covering Rails and all its major components. This is the tutorial I suggest for all newbies and typically suggest reading it twice.
+      </p>
       <span class="cd-date">May 13</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->
 
   <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-picture">
-      <img src="img/tutorial.svg" alt="Picture">
+    <div class="cd-timeline-img icon">
+      <img src="img/tutorial.svg" class="tutorial" alt="Picture">
     </div> <!-- cd-timeline-img -->
 
     <div class="cd-timeline-content">
       <h2><a href="https://twitter.com/mattangriffel">Mattan Griffel</a>'s <a href="https://onemonth.com/courses/one-month-rails/">One Month Rails</a></h2>
       <h2><a href="http://pacific-beyond-2722.herokuapp.com/">Pinterest Clone</a></h2>
-      <p></p>
+      <p>
+        Mattan's OMR is a good intro to the power of Rails, however does not teach much and will leave you with a "Type what I type" feeling. If you are interested in Rails and wondering how powerful it can be, I suggest this course. If you already know the power and want to start coding, I would suggest <a href="https://pine.fm/LearnToProgram/">Learn to Program by Chris Pine</a>.
+      </p>
       <span class="cd-date">Apr 13</span>
     </div> <!-- cd-timeline-content -->
   </div> <!-- cd-timeline-block -->

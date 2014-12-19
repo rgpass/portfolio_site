@@ -48,3 +48,33 @@ body {
 #cd-timeline {
   font-size: 0.8em;
 }
+
+li i {
+  margin-top: 5px;
+}
+
+/* Icons */
+.icon {
+  background: #2196f3; /* Was #75ce66 */
+}
+img.job {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  left: 43%;
+  top: 40%;  
+}
+img.hackathon {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  left: 40%;
+  top: 38%;  
+}
+img.tutorial {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  left: 43%;
+  top: 45%;
+}
