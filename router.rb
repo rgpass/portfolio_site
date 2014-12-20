@@ -4,14 +4,14 @@ get '/' do
   erb :portfolio
 end
 
-get '/posts' do
-  erb :posts
+get '/blog' do
+  erb :blog
 end
 
 get '/made-with' do
   erb :made_with
 end
 
-get '/creating-blog-sinatra-syntax-highlighting' do
+get '/hello-world-sinatra-heroku' do
   erb 'posts/n_001'.to_sym
 end

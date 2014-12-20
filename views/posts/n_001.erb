@@ -1,13 +1,80 @@
-<h1 class="text-center">Sinatra + Syntax Highlighting # => Blog</h1>
+<h1>Hello World with Sinatra and Heroku</h1>
+<h3 class="subtitle">Part 1 of Creating a Developer Blog series</h3>
+<h5>Posted Dec 20, 2014</h5>
+<br>
+<div class="col-lg-8 col-lg-offset-2">
+  <div class="dynamic-center">
+    <h3>Overview</h3>
+    <h4>Assumptions</h4>
+    <p>You know what the terms in the subtitle mean. You have a Mac or can translate the Terminal commands to Command Prompt. You have Sublime Text installed or can translate accordingly. You've set up your environment for Git, GitHub, and Heroku. You have minor experience with Ruby or a decent amount of experience with another OOP language.</p>
 
-<pre><code class="language-css">p { color: red }
+    <h4>Quick Summary</h4>
+    <p>
+      Blogs take a lot of time to write. They shouldn't take a long time to setup. Combining Sinatra, Bootstrap and Heroku makes setup easy. Add Prism.js on top of that and you can get a technical blog up in a matter of minutes. This is the first article in a multi-part series. For more, check the <a href="/blog">blog</a>.
+    </p>
+
+    <h4>Tech Used</h4>
+    <a href="http://www.sinatrarb.com/">Sinatra</a> v1.4.5<br>
+    <a href="https://www.heroku.com/">Heroku</a>
+
+    <br>
+    <br>
+    <h3>Hello World</h3>
+    <p>
+      First step is to get a <a href="http://en.wikipedia.org/wiki/%22Hello,_world!%22_program">Hello World</a> on our local machine then get it to work on Heroku. What makes Sinatra so awesome is its ability to accomplish that in four lines of code. But first, let's create a new folder in the Terminal, install Sinatra, and create our router.
+    </p>
+<pre><code class="language-bash">$ cd ~
+$ mkdir sinatra_projects
+$ cd sinatra_projects
+$ mkdir blog
+$ cd blog
+$ gem install sinatra
+$ touch router.rb
+$ subl .
 </code></pre>
+    <p>Now that we have Sublime open, we can start coding. Let's write those four lines I promised earlier.</p>
+<pre><code class="language-ruby"># blog/router.rb
+require 'sinatra'
+get '/' do
+  'Hello world!'
+end
+</code></pre>
+    <p>Now let's jump back to Terminal to get it up and running.</p>
+<pre><code class="language-bash">$ ruby router.rb 
+[2014-12-20 15:56:58] INFO  WEBrick 1.3.1
+[2014-12-20 15:56:58] INFO  ruby 2.1.2 (2014-05-08) [x86_64-darwin13.0]
+== Sinatra/1.4.5 has taken the stage on 4567 for development with backup from WEBrick
+[2014-12-20 15:56:58] INFO  WEBrick::HTTPServer#start: pid=16304 port=4567
+</code></pre>
+    <p>
+      To make sure it's working, open up Chrome (or your browser of choice) and head to <a href="http://localhost:4567/">http://localhost:4567/</a>. If that didn't work, match the numbers after <code>localhost:</code> with the numbers next to <code>port=</code> in Terminal.
+    </p>
+    <p>
+      Just like that, we have Hello World in Sinatra. Pretty simple, right? Now let's do a couple things to get Heroku to work. First I'm going to connect it to GitHub. To set that up: github.com > your profile > Repositories > New > Go through their step-by-step process, ignore <code>$ touch README.rdoc</code> and replace <code>$ git add README.rdoc</code> with <code>$ git add .</code>
+    </p>
+    <p>Now that Git and GitHub are set up, let's get our app on Heroku to know everything's working. You'll have to make a few files, which are denoted by the comments.</p>
+<pre><code class="language-ruby"># blog/config.ru
+require './router'
+run Sinatra::Application
 
-<pre>
-<code class="language-ruby">def cool
-  @string   = "cool"
-  @integer  = 5
-end</code>
-</pre>
+# blog/Gemfile
+source 'https://rubygems.org'
+gem 'sinatra'
+</code></pre>
+    <p>Now jump over to the Terminal to install the gems and set up Heroku. Note: You can rename it to whatever you'd like.</p>
+<pre><code class="language-bash">$ bundle
+$ git add . --all
+$ git commit -m "Set up Heroku"
+$ git push
+$ heroku create
+$ heroku apps:rename gerrypass
+$ git push heroku master
+$ heroku open
+</code></pre>
+    <p>Voila! We have Hello World up.</p>
 
-
+    <br>
+    <h3>Final Word</h3>
+    <p>This project can be found on <a href="https://github.com/rgpass/sinatra_blog_tutorial/tree/3775933c08e711f383efb8e631c4933adf1689fc">GitHub</a>. Check the <a href="/blog">blog</a> for more in this multi-part series.</p>
+  </div>
+</div>

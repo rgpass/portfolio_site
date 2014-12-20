@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 10px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h5 {
   color: #00b79c;
 }
 
@@ -64,13 +64,13 @@ li i {
 }
 
 @media only screen and (max-width: 1170px) {
-  h1, h2.subtitle, h3, h4, .dynamic-center {
+  h1, h2.subtitle, h3, h4, h5, .dynamic-center {
     text-align: left;
   }
 }
 
 @media only screen and (min-width: 1170px) {
-  h1, h2.subtitle, h3, h4, .dynamic-center {
+  h1, h2.subtitle, h3, h4, h5, .dynamic-center {
     text-align: center;
   }
 }
