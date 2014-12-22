@@ -16,3 +16,7 @@ end
 get '/hello-world-sinatra-heroku' do
   slim 'posts/n_001'.to_sym
 end
+
+get '/structure-sinatra-easy-blog' do
+  slim 'posts/n_002'.to_sym
+end

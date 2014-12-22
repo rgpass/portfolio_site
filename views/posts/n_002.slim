@@ -1,0 +1,159 @@
+h1 Easy Blog Structure with Sinatra
+h3.subtitle Part 2 of Creating a Developer Blog series
+h5 Posted Dec 22, 2014
+br/
+.col-lg-8.col-lg-offset-2
+  .dynamic-center
+    h3 Overview
+    h4 Word of Caution
+    p My approach to coding is to get a MVP up and running, then refactor as necessary. The structure provided is only a first draft and shouldn't be used for blogs with a large number of posts. If you're looking for a quick and dirty solution, read on.
+    h4 Assumptions
+    p You have done all the previous part(s) of this series or you have a working knowledge with Sinatra. You have a Mac or can translate the Terminal commands to Command Prompt. You have Sublime Text installed or can translate accordingly. You've set up your environment for Git, GitHub, and Heroku. You have minor experience with Ruby or a decent amount of experience with another OOP language.
+    h4 Quick Summary
+    p
+      | Blogs take a lot of time to write. They shouldn't take a long time to setup. Combining Sinatra, Bootstrap and Heroku makes setup easy. Add Prism.js on top of that and you can get a technical blog up in a matter of minutes. This is the first article in a multi-part series. For more, check the
+      a href="/blog"  blog
+      | .
+    h4 Tech Used
+    a href="http://www.sinatrarb.com/"  Sinatra
+    |  v1.4.5
+    br/
+    a href="https://www.heroku.com/"  Heroku
+    br/
+    a href="http://slim-lang.com/"  Slim
+    |  v3.0.0
+    br/
+    br/
+    h3 Pages with Slim
+    p
+      | If you haven't used  
+      a href="http://slim-lang.com/" Slim
+      |  before, I suggest giving it a try. It makes HTML/ERb pages much cleaner and is significantly faster than HAML. Spend a few minutes 
+      a href="https://html2slim.herokuapp.com/" converting plain HTML or ERb pages to Slim
+      | . Let's get Slim installed real quick.
+      pre
+        code.language-ruby # blog/Gemfile
+          # ...
+          gem 'sinatra'
+          gem 'slim'
+
+          # blog/app.rb
+          require 'sinatra'
+          require 'slim'
+          # ...
+      pre
+        code.language-bash $ bundle
+    p
+      | Sinatra automatically looks for templates in a views folder, so we'll have to make that. We'll also make our test page and follow 
+      a href="http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"  Hello World
+      |  fashion. Note: The syntax highlighting tool I use does not support Slim, so ignore the coloring.
+      pre
+        code.language-bash # blog/views/test_page.slim
+          h1 Hello World
+    p
+      | Now let's set up our server to match 
+      code localhost:4567/test
+      |  to our new test page.
+      pre
+        code.language-ruby # blog/app.rb
+          # ...
+          get '/test' do
+            slim :test_page
+          end
+    p
+      | I'm a big fan of pushing up to Heroku every time I change a significant piece of the environment. It helps that with Sinatra you can push up to Heroku ridiculously quick. Let's push up and make sure we're good to go.
+      pre
+        code.language-bash $ git add .
+          $ git commit -m "Add test page"
+          $ git push
+          $ git push heroku master
+          $ heroku open
+    p
+      | Now head over to 
+      code yourappname.herokuapp.com/test
+      |  and you'll see the header of "Hello World".
+    p
+      | Now that we know it's working, we can easily change some code to get our index page. First, change the name of 
+      code blog/views/test_page.slim
+      |  to 
+      code blog/views/blog_index.slim
+      |  then add a link to your first post.
+      pre
+        code.language-bash h2 List of Articles
+          a href="/first-post" My First Post
+      | Then replace the 
+      code '/'
+      |  route with the following:
+      pre
+        code.language-ruby # blog/app.rb
+          # ...
+          get '/' do
+            slim :blog_index
+          end
+    h3 First Post
+    p As mentioned in the Word of Caution at the top, the following advice is how to most easily make a blog post. It's not the best or cleanest, but once you're pushing 30+ articles, you'll have enough experience to really clean up your structure. For now, I'm going to go quick and dirty.
+    p 
+      | Let's create a quick post in a new folder to help with organization. Note: View files have to start with a letter, so thus the n in front.
+      pre
+        code.language-bash # blog/views/posts/n_001.slim
+          h2 My first post
+          p --insert awesome content here--
+      pre
+        code.language-ruby # blog/app.rb
+          # ...
+          get '/first-post' do
+            slim 'posts/n_001'.to_sym
+          end
+      | Sinatra's DSL requires a symbol for views, so thus the weird syntax. Using something like 
+      code 
+        | :posts/n_001
+      |  won't work, so this is a (horribly ugly) substitute. Let's restart our server then head over to 
+      code
+        | /first-post
+      | .
+      pre
+        code.language-bash $ ruby app.rb
+    h3 DRY'd Layout
+    p The way we have it set up allows for 0% code sharing. This isn't good. We will definitely want to share a title (for now) and later a navbar. Let's set the ground work for that.
+    p 
+      | Sinatra has a special meaning for 
+      code
+        | ./views/layout.slim
+      | and will automatically refer to this file when loading a page. There we can put in our general layout stuff.
+      pre
+        code.language-bash # blog/views/layout.slim
+          html
+            head
+              title My Soon-To-Be Famous Blog
+            body
+              h1 Welcome to My Blog
+              == yield
+    p
+      | Now if we refresh the first post page, it'll automatically load in our 
+      code layout.slim
+      | . Little bit of Sinatra's 
+      a href="http://www.urbandictionary.com/define.php?term=automagically" automagic
+      | .
+    p
+      | Let's push it up to Heroku now that we've made another environment change.
+      pre
+        code.language-bash $ git add . --all
+          $ git commit -m "Create structure for blog posts"
+          $ git push
+          $ git push heroku master
+          $ heroku open
+    p
+      | Now we can navigate to 
+      code
+        | /blog
+      |  or 
+      code
+        | /first-post
+      |  and they will share the header of "Welcome to My Blog". You can now emulate this behavior to create some new content. It may seem like a little bit of work, but realistically it's about the same amount of time as a WordPress post and you get all the flexibility you want.
+    h3 Final Word
+    p
+      | This project can be found on
+      a href="https://github.com/rgpass/sinatra_blog_tutorial/tree/afb4d1e0d46f9096bea49e01dc1d8dbdd61f0d34"  GitHub
+      | . Check the
+      a href="/blog"  blog
+      |  for more in this multi-part series.
