@@ -1,17 +1,18 @@
 require 'sinatra'
+require 'slim'
 
 get '/' do
-  erb :portfolio
+  slim :portfolio
 end
 
 get '/blog' do
-  erb :blog
+  slim :blog
 end
 
 get '/made-with' do
-  erb :made_with
+  slim :made_with
 end
 
 get '/hello-world-sinatra-heroku' do
-  erb 'posts/n_001'.to_sym
+  slim 'posts/n_001'.to_sym
 end
