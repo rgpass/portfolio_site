@@ -20,3 +20,11 @@ end
 get '/structure-sinatra-easy-blog' do
   slim 'posts/n_002'.to_sym
 end
+
+get '/sinatra-bootstrap-css-js' do
+  slim 'posts/n_003'.to_sym
+end
+
+get '/sinatra-syntax-highlighting-prismjs' do
+  slim 'posts/n_004'.to_sym
+end

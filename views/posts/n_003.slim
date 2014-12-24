@@ -1,0 +1,134 @@
+h1 Adding Bootstrap, CSS and JS Files to Sinatra
+h3.subtitle Part 3 of Creating a Developer Blog series
+h5 Posted Dec 23, 2014
+br/
+.col-lg-8.col-lg-offset-2.dynamic-center
+  h3 Overview
+  h4 Assumptions
+  p You have done all the previous part(s) of this series or you have a working knowledge with Sinatra. You have a Mac or can translate the Terminal commands to Command Prompt. You have Sublime Text installed or can translate accordingly. You've set up your environment for Git, GitHub, and Heroku. You have minor experience with Ruby or a decent amount of experience with another OOP language. You know what ther terms mean in the title.
+  h4 Quick Summary
+  p
+    | Blogs take a lot of time to write. They shouldn't take a long time to setup. Combining Sinatra, Bootstrap and Heroku makes setup easy. Add Prism.js on top of that and you can get a technical blog up in a matter of minutes. This is the third article in a multi-part series. For more, check the
+    a href="/blog"  blog
+    | .
+  h4 Tech Used
+  a href="http://www.sinatrarb.com/"  Sinatra
+  |  v1.4.5
+  br/
+  a href="https://www.heroku.com/"  Heroku
+  br/
+  a href="http://slim-lang.com/"  Slim
+  |  v3.0.0
+  br/
+  a href="http://getbootstrap.com/" Bootstrap
+  |  v3.3.1
+  br/
+  a href="http://www.bootswatch.com/"  Bootswatch
+  |  (free Bootstrap themes) v3.3.1
+  br/
+  a href="https://code.jquery.com/jquery-2.1.3.min.js" jQuery
+  |  v2.1.3
+  br/
+  br/
+  h3 File Structure
+  p
+    | Sinatra expects all public files to be in a 
+    code public
+    |  folder. Files in this folder do not need to have routes mapped to them.
+  p To help with basic organization, let's create a couple of subfolders to house our CSS, JS, and images.
+  pre
+    code.language-bash # From your project directory
+      $ mkdir public
+      $ cd public
+      $ mkdir css
+      $ mkdir img
+      $ mkdir js
+      $ touch css/bootstrap.css
+      $ touch css/custom.css
+      $ touch js/jquery.min.js
+      $ touch js/bootstrap.min.js
+      $ subl .
+  p The only thing left to do is to require it, which we'll cover in a real example via adding Bootstrap.
+  h3 Adding CSS/JS with Bootstrap
+  p
+    | Lots of sites these days use Bootstrap because it's an awesome front-end framework that can get you 0-60 in a few minutes. The downside of it being so easy is that tons of sites use it and it's tough to distinguish yourself. I'm not a big fan of paying for stuff when there are free options out and that's where 
+    a href="http://www.bootswatch.com/" Bootswatch
+    |  comes in. Head on over there and pick a theme, then click the arrow next to Download and choose bootstrap.css. Select all and copy the text that shows up, then paste it inside 
+    code
+      | blog/public/css/bootstrap.css
+    | .
+  p
+    | Now we have to require it. As mentioned in 
+    a href="/structure-sinatra-easy-blog" the previous article of this series
+    | , Sinatra will automatically detect 
+    code
+      | ./views/layout.*
+    |  when loading the page. So all we need to do is to require our bootstrap.css in this file and we'll be good to go. If you have custom CSS, you can add that in as well as shown below.
+  pre
+    code.language-bash # blog/views/layout.slim
+      html
+        head
+          link href="/css/bootstrap.css" rel="stylesheet"
+          link href="/css/custom.css" rel="stylesheet"
+          title My Soon-To-Be Famous Blog
+      # ...
+  p Refreshing the page will show you a slightly different font than the standard, depending on what theme you chose and if you added any custom CSS.
+  p
+    | Similar to how we added Bootstrap's CSS, we can add in the required JavaScript easily. There is one caveat -- Bootstrap's JavaScript has a dependency on jQuery. We'll need to add both. First, head on over to 
+    a href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"
+      | Bootstrap's minified JS CDN
+    | , select all, copy, then paste it into 
+    code
+      | blog/public/js/bootstrap.min.js
+    | . Then head on over to 
+    a href="https://code.jquery.com/jquery-2.1.3.min.js"
+      | jQuery's CDN
+    | , select all, copy, then paste it into 
+    code
+      | blog/public/js/jquery.min.js
+    | .
+  p
+    | Similar to the CSS, we need to require both of these in our 
+    code layout.slim
+    |  then we're good to go.
+  pre
+    code.language-bash # blog/views/layout.slim
+      html
+        head
+          link href="/css/bootstrap.css" rel="stylesheet"
+          link href="/css/custom.css" rel="stylesheet"
+          script src="/js/jquery.min.js"
+          script src="/js/bootstrap.min.js"
+          title My Soon-To-Be Famous Blog
+      # ...
+  p Note: The order does matter. We typically want our custom CSS to overwrite out Bootswatch CSS and Bootstrap's JavaScript requires jQuery. CSS overwrites go latter and JavaScript dependencies go prior.
+  h3 Partials
+  p
+    | Similar to most sites, you'll probably want to add a navbar to your page. Since Sinatra autoloads in anything in 
+    code layout.*
+    | , you'll want to put your navbar code in there. However, this can get quite cumbersome when managing code. The best thing to do is to put it inside a partial, then call it from inside your layout. First, create the file 
+    code
+      | blog/views/_navigation.slim
+    | . The underscore depicts that the file is a partial. This isn't required in Sinatra, but it's a best practice.
+  p
+    | Next, we call it in our 
+    code layout.slim
+    | .
+  pre
+    code.language-bash # blog/views/layout.slim
+      # ...
+      body
+        == slim :_navigation
+        h1 Welcome to My Blog
+        == yield
+  p
+    | Now if we want to create/edit our navigation, we can do so easily inside 
+    code _navigation.slim
+    | .
+  h3 Final Word
+  p
+    | This project can be found on
+    a href="https://github.com/rgpass/sinatra_blog_tutorial/tree/a91f7a16374e16100dcd9e0b27fdbe5ec7e423a0"  GitHub
+    | . Check the
+    a href="/blog"  blog
+    |  for more in this multi-part series.
