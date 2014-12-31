@@ -28,3 +28,7 @@ end
 get '/sinatra-syntax-highlighting-prismjs' do
   slim 'posts/n_004'.to_sym
 end
+
+get '/custom-domain-domainr-iwantmyname' do
+  slim 'posts/n_005'.to_sym
+end

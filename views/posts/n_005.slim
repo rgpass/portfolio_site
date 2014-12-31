@@ -1,0 +1,93 @@
+h1 Custom Domains with Domainr and iwantmyname
+h3.subtitle Part 5 of Creating a Developer Blog series
+h5 Posted Dec 31, 2014
+br/
+.col-lg-8.col-lg-offset-2.dynamic-center
+  h3 Overview
+  h4 Assumptions
+  p You have done all the previous part(s) of this series or you have a working knowledge with Sinatra. You have a Mac or can translate the Terminal commands to Command Prompt. You have Sublime Text installed or can translate accordingly. You've set up your environment for Git, GitHub, and Heroku. You have minor experience with Ruby or a decent amount of experience with another OOP language. You know what the terms mean in the title.
+  h4 Quick Summary
+  p
+    | Blogs take a lot of time to write. They shouldn't take a long time to setup. Combining Sinatra, Bootstrap and Heroku makes setup easy. Add Prism.js on top of that and you can get a technical blog up in a matter of minutes. This is the fifth article in a multi-part series. For more, check the
+    a href="/blog"  blog
+    | .
+  h4 Tech Used
+  a href="https://www.heroku.com/"  Heroku
+  br/
+  a href="https://domainr.com/" Domainr
+  br/
+  a href="https://iwantmyname.com/" iwantmyname
+  br/
+  a href="http://kaffeine.herokuapp.com/" Kaffeine
+  br/
+  br/
+  h3 Searching for Available Domains with Domainr
+  p
+    | Let's start off by covering what a domain is. See how you went to 
+    code
+      | http://www.gerrypass.com/
+    |  to get to my portfolio site and to this blog? This is a called a custom domain and it's one that I have purchased by going through the process outlined in this blog post.
+  p
+    | You cannot purchase domains that have been purchased by other people. To determine which ones are available, you can do one of three things:
+    br
+    | 1. Go to each URL to see if it's taken
+    br
+    | 2. Go to a site like GoDaddy and search around
+    br
+    | 3. Save yourself a ton of time by using an awesome service like 
+    a href="https://domainr.com/" target="_blank" Domainr
+  p
+    | Using Domainr, we can easily see what's available. Type in "google" and you'll see zero green circles. Type in "afkalfksfl" and you'll see a ton. You only need to type in the first part of the root domain to see what 
+    a href="http://en.wikipedia.org/wiki/Generic_top-level_domain" target="_blank" gTLDs
+    |  are available. If you're looking for a .com and only a .co is available, you can either settle for a less-generic one like I did with 
+    a href="https://www.happs.io/" target="_blank" Happs
+    |  or think of ways you can change your domain by adding a "go", "get", or "the" in front. You're not above this -- remember that even Facebook used to be 
+    code
+      | http://www.thefacebook.com/
+    | .
+  h3 Purchasing Domains with iwantmyname
+  p If you're like me, you've used GoDaddy before and would rather not have to go through that experience again. I'm a firm believer that every subject, no matter how complex, can be made easy, which is something that iwantmyname does well.
+  p
+    | Once you've determined the name you want, head on over to 
+    a href="https://iwantmyname.com/" target="_blank" iwantmyname
+    |  and sign up or sign in. From there, click on Domains, click Register new domain, type in the name of the URL you want including the TLD, click the one you want to add it to your cart, click Checkout, click Submit order to finalize the purchase, and check your email that you signed up with to confirm your purchase.
+  p Done. :)
+  p
+    | Note: If you're looking to have an email service with your domain, I suggest using 
+    a href="https://www.google.com/work/apps/business/products.html" target="_blank" Google Apps for Work
+    |  as it plays nicely with iwantmyname.
+  h3 Pointing Your Domain to Heroku
+  p
+    | Now we need to get our custom domain to point to our Heroku. For this example, I need to get my custom domain of 
+    code
+      | http://www.gerrypass.com/
+    | to point to my Heroku project which has a URL of 
+    code
+      | https://gerrypass.herokuapp.com/
+    | . Your custom domain and Heroku URL will obviously be different, so just substitute as necessary in these steps.
+  p
+    | Click on Domains, click on gerrypass.com, click on Manage DNS records, type "Heroku" in the box for popular web services and one-click setup, type "gerrypass" in the box at the bottom that has ".herokuapp.com" next to it, and click Install Heroku.
+  p
+    | Now we have to get Heroku to accept our custom domain which is currently a free feature.
+  h3 Heroku's Custom Domain Setup
+  p
+    | Heroku actually has some 
+    a href="https://devcenter.heroku.com/articles/custom-domains" target="_blank" awesome docs
+    |  on how to set this up. For this project, all I need to do is
+    pre
+      code.language-bash # ~/blog  (project's root directory)
+        $ heroku domains:add www.gerrypass.com
+  p
+    | And voila! Visiting 
+    code
+      | http://www.gerrypass.com/
+    |  gives us what we want. 
+  h3 Bonus: Stay awake with Kaffeine
+  p
+    a href="http://kaffeine.herokuapp.com/" target="_blank" Kaffeine
+    |  is a black-hat app that keeps your app from falling into Heroku's sleep mode. It's black-hat because it's something you should pay for to support Heroku and all its awesomeness. In my opinion, it's OK to use this service if you're looking to gain some early traction and plan to use Heroku in the future as your site gains traffic.
+  h3 Final Word
+  p
+    | Custom domains add a serious amount of credibility to your project. It shows you've invested some money and it's more than just a weekend project. Having a blog and/or a portfolio site with your domain gives you the ability to make business cards and easily link to yourself on LinkedIn.
+  p
+    | This ends the major technical portion of this series. I hope you found it useful. :)
