@@ -9,7 +9,7 @@ html
     script src="/js/jquery.min.js"
     script src="/js/bootstrap.min.js"
     script src="/js/prism.js"
-    title Gerry Pass' Portfolio
+    title = @title ? "#{@title} | Gerry Pass" : "Gerry Pass"
   body
     == slim :_navigation
     .container-fluid
