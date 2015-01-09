@@ -40,3 +40,8 @@ get '/custom-domain-domainr-iwantmyname' do
   @title = 'Custom Domains with Domainr and iwantmyname'
   slim 'posts/n_005'.to_sym
 end
+
+get '/why-developers-should-blog' do
+  @title = 'Why Developers Should Blog'
+  slim 'posts/n_006'.to_sym
+end
