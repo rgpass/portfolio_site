@@ -45,3 +45,8 @@ get '/why-developers-should-blog' do
   @title = 'Why Developers Should Blog'
   slim 'posts/n_006'.to_sym
 end
+
+get '/what-code-style-says' do
+  @title = 'What Your Coding Style Says About You'
+  slim 'posts/n_007'.to_sym
+end
