@@ -50,3 +50,8 @@ get '/what-code-style-says' do
   @title = 'What Your Coding Style Says About You'
   slim 'posts/n_007'.to_sym
 end
+
+get '/marshmallow-challenge-developer' do
+  @title = 'Be a Marshmallow Challenge Developer'
+  slim 'posts/n_008'.to_sym
+end

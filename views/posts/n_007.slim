@@ -1,0 +1,12 @@
+h1 = @title
+h5 Posted Jan 10, 2015
+br/
+.col-lg-8.col-lg-offset-2.dynamic-center
+  p
+    | A recruiting company called me today and asked if I could review the code of two candidates applying for a Ruby position. I was honored and glad to help.
+  p
+    | The first thing I noticed was an abbreviation in the module's name. The times when this is OK in Ruby is when the abbreviation is well known, such as Mgmt for Management. Abbreviations that aren't clear show that you're developing for yourself and not for the next person. Developers know that the time it takes to write code is dwarfed by the time it takes to maintain code. In Ruby, always use awesome naming. Ruby should read like a book.
+  p
+    | Next thing I noticed was how huge the file was with public methods. Always keep your interface in mind. If you only need 3 methods accessed from outside a class, make the rest private. I always try to make my methods private because you don't need to test private methods and you can change them up. If you can cut your public methods in half, you essentially cut the maintenance time in half.
+  p
+    | The third and last major I pillar I noticed was consistency. If your style, naming, or structure is consistent, it's an easy fix from an employer's perspective; the lead developer tells you how it should be done, you fix your current commit / Pull Requests, and you're good to go (assuming you retain it). Lack of consistency, however shows a scattered brain and scattered approach to problems. If you tab in two blocks of code differently, even if they're both readable, it's a red flag.
