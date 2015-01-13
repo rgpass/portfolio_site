@@ -55,3 +55,8 @@ get '/marshmallow-challenge-developer' do
   @title = 'Be a Marshmallow Challenge Developer'
   slim 'posts/n_008'.to_sym
 end
+
+get '/recruiters-know-the-landscape' do
+  @title = 'Recruiters: Know the Landscape'
+  slim 'posts/n_009'.to_sym
+end
