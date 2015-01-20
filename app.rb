@@ -60,3 +60,8 @@ get '/recruiters-know-the-landscape' do
   @title = 'Recruiters: Know the Landscape'
   slim 'posts/n_009'.to_sym
 end
+
+get '/recruiters-research-us' do
+  @title = 'Recruiters: Research Us'
+  slim 'posts/n_010'.to_sym
+end
