@@ -65,3 +65,12 @@ get '/recruiters-research-us' do
   @title = 'Recruiters: Research Us'
   slim 'posts/n_010'.to_sym
 end
+
+get '/recruiters-share-information' do
+  @title = 'Recruiters: Share Information'
+  slim 'posts/n_011'.to_sym
+end
+
+get '/soft-skills-software-developers-life-manual/section-01-career' do
+  slim 'posts/soft_skills/section_01'.to_sym
+end
