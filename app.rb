@@ -74,3 +74,7 @@ end
 get '/soft-skills-software-developers-life-manual/section-01-career' do
   slim 'posts/soft_skills/section_01'.to_sym
 end
+
+get '/soft-skills-software-developers-life-manual/section-02-marketing-yourself' do
+  slim 'posts/soft_skills/section_02'.to_sym
+end
